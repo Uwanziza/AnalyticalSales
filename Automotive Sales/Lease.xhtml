@@ -1,0 +1,251 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <!-- Meta, title, CSS, favicons, etc. -->
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+        <title>Car Leases</title>
+
+        <!-- Bootstrap -->
+        <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
+        <!-- Font Awesome -->
+        <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
+        <!-- NProgress -->
+        <link href="../vendors/nprogress/nprogress.css" rel="stylesheet"/>
+
+        <!-- Custom Theme Style -->
+        <link href="../build/css/custom.min.css" rel="stylesheet"/>
+    </h:head>
+    <h:body  class="nav-md">
+        <div class="container body">
+            <div class="main_container">
+                <div class="col-md-3 left_col">
+                    <div class="left_col scroll-view">
+                        <div class="navbar nav_title" style="border: 0;">
+                            <a href="index.xhtml" class="site_title"><i class="fa fa-paw"></i> <span>Automotive</span></a>
+                        </div>
+
+                        <div class="clearfix"></div>
+
+
+
+                        <br />
+
+                        <!-- sidebar menu -->
+                        <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                            <div class="menu_section">
+
+                                <ul class="nav side-menu">
+                                    <li><a href="index.xhtml"><i class="fa fa-home"></i> Home </a></li>
+                                    <li><a><i class="fa fa-car"></i> Cars <span class="fa fa-chevron-down"></span></a>
+                                        <ul class="nav child_menu">
+                                            <li><a href="Cars_Lease.xhtml">For Lease</a></li>
+                                            <li><a href="Cars_Sales.xhtml">For Sale</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="viewLeases.xhtml"><i class="fa fa-refresh"></i> Leases </a></li>
+                                    <li><a href="viewSales.xhtml"><i class="fa fa-money"></i> Sales </a></li>
+
+
+
+                                </ul>
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <!-- top navigation -->
+                <div class="top_nav">
+                    <div class="nav_menu">
+                        <div class="nav toggle">
+                            <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+                        </div>
+                        <nav class="nav navbar-nav">
+                            <ul class=" navbar-right">
+                                <li class="nav-item dropdown open" style="padding-left: 15px;">
+                                    <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
+                                        <img src="images/img.jpg" alt=""/>#{customerModel.loadCust.FName} #{customerModel.loadCust.LName}
+                                    </a>
+                                    <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item"  href="MyInfo.xhtml"> Profile</a>
+                                        <a class="dropdown-item"  href="ChangePassword.xhtml"> Change Password</a>
+
+                                        <h:form>
+                                            <h:commandLink class="dropdown-item"  action="#{userModel.logout()}"><i class="fa fa-sign-out pull-right"></i> Log Out</h:commandLink>
+                                        </h:form>
+                                    </div>
+                                </li>
+
+
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <!-- /top navigation -->
+
+                <!-- page content -->
+                <div class="right_col" role="main">
+                    <div class="">
+                        <div class="page-title">
+                            <div class="title_left">
+                                <h3>Lease a Cars</h3>
+                            </div>
+
+                        </div>
+                        <div class="clearfix"></div>
+
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12">
+                                <div class="x_panel">
+                                    <div class="x_title">
+                                        <h2>Cars Leasing <small>#{customerModel.cardeatails.name}</small></h2>
+
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="x_content">
+                                        <h:form enctype="multipart/form-data">
+                                            <p:messages/>
+
+                                            <div class="card col-md-6">
+                                                <div class="row no-gutters">
+                                                    <div class="col-auto">
+                                                        <img src="../../Photos/#{customerModel.cardeatails.photo}" width="300px" class="img-fluid" alt=""/>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="card-block px-2">
+
+                                                            <div style="padding: 20px">
+                                                                <h4 class="card-title"><span style="font-weight: bold; color: black">Car Name :</span> #{customerModel.cardeatails.name}</h4>
+                                                                <h4 class="card-title"><span style="font-weight: bold; color: black">Car Brand : </span>#{customerModel.cardeatails.brand}</h4>
+                                                                <h4 class="card-title"><span style="font-weight: bold; color: black">Plate No : </span>#{customerModel.cardeatails.plateNo}</h4>
+                                                                <h4 class="card-title"><span style="font-weight: bold; color: black">Manufacturing Year : </span>#{customerModel.cardeatails.manufacturingYear}</h4>
+                                                                <h4 class="card-title"><span style="font-weight: bold; color: black">Status : </span><p style="font-size: 14px" class="badge badge-success">#{customerModel.cardeatails.status}</p></h4>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            
+                                            
+                                            <div class="field item form-group">
+                                                <label class="col-form-label col-md-3 col-sm-3  label-align"></label>
+                                                <h2 class="badge badge-warning" style="padding: 20px; font-size: 12px">Daily Fee : #{customerModel.cardeatails.leaseFee} FRW</h2>
+                                            </div>
+                                            
+
+                                            <div class="field item form-group">
+                                                <label class="col-form-label col-md-3 col-sm-3  label-align">Lease Date<span class="required">*</span></label>
+                                                <div class="col-md-6 col-sm-6">
+                                                    <h:inputText class="form-control" value="#{customerModel.lease.leaseDate}" required="true" requiredMessage="Lease Date is Required!">
+                                                        <f:convertDateTime pattern="dd/MM/yyyy"/>
+                                                    </h:inputText>
+                                                </div>
+                                            </div>
+
+                                            <div class="field item form-group">
+                                                <label class="col-form-label col-md-3 col-sm-3  label-align">Return Date<span class="required">*</span></label>
+                                                <div class="col-md-6 col-sm-6">
+                                                    <h:inputText class="form-control" value="#{customerModel.lease.returnDate}" required="true" requiredMessage="Return Date is Required!">
+                                                        <f:convertDateTime pattern="dd/MM/yyyy"/>
+                                                    </h:inputText>
+                                                </div>
+                                            </div>
+
+
+
+
+                                            <div class="field item form-group">
+                                                <label class="col-form-label col-md-3 col-sm-3  label-align"></label>
+                                                <div class="col-md-6 col-sm-6">
+                                                    <h:commandButton class="btn btn-info" value="Submit" action="#{customerModel.createLease()}"/>
+
+                                                </div>
+                                            </div>
+
+
+ 
+                                            <div class="field item form-group">
+                                                <label class="col-form-label col-md-3 col-sm-3  label-align"></label>
+                                                <div class="col-md-6 col-sm-6">
+                                                    <p:fileUpload  style="display: none"   fileUploadListener="#{adminModel.Upload}" mode="advanced" dragDropSupport="true"
+                                                                     sizeLimit="1000000000000" fileLimit="1" invalidFileMessage="Invalid Image Type"  allowTypes="/(\.|\/)(gif|jpe?g|png)$/" />
+                                                </div>
+                                            </div>
+
+                                        </h:form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /page content -->
+
+                <!-- footer content -->
+                <footer>
+                    <div class="pull-right">
+                        &copy; Copyright <strong><span>UWANZIZA Chanelle</span></strong>. All Rights Reserved
+                    </div>
+                    <div class="clearfix"></div>
+                </footer>
+                <!-- /footer content -->
+            </div>
+        </div>
+
+
+        <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
+        <script src="../vendors/validator/multifield.js"></script>
+        <script src="../vendors/validator/validator.js"></script>
+
+        <!-- Javascript functions	-->
+        <script>
+            function hideshow() {
+                var password = document.getElementById("password1");
+                var slash = document.getElementById("slash");
+                var eye = document.getElementById("eye");
+                
+                if (password.type === 'password') {
+                    password.type = "text";
+                    slash.style.display = "block";
+                    eye.style.display = "none";
+                } else {
+                    password.type = "password";
+                    slash.style.display = "none";
+                    eye.style.display = "block";
+                }
+                
+            }
+        </script>
+
+
+
+        <!-- jQuery -->
+        <!--<script src="../vendors/jquery/dist/jquery.min.js"></script>-->
+        <!-- Bootstrap -->
+        <script src="../vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- FastClick -->
+        <script src="../vendors/fastclick/lib/fastclick.js"></script>
+        <!-- NProgress -->
+        <script src="../vendors/nprogress/nprogress.js"></script>
+        <!-- validator -->
+        <!-- <script src="../vendors/validator/validator.js"></script> -->
+
+        <!-- Custom Theme Scripts -->
+        <script src="../build/js/custom.min.js"></script>
+    </h:body>
+</html>
+

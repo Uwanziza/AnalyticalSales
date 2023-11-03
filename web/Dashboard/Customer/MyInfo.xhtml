@@ -1,0 +1,315 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <!-- Meta, title, CSS, favicons, etc. -->
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+        <title>My Info</title>
+
+        <!-- Bootstrap -->
+        <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
+        <!-- Font Awesome -->
+        <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
+        <!-- NProgress -->
+        <link href="../vendors/nprogress/nprogress.css" rel="stylesheet"/>
+        <!-- iCheck -->
+        <link href="../vendors/iCheck/skins/flat/green.css" rel="stylesheet"/>
+
+        <!-- Custom Theme Style -->
+        <link href="../build/css/custom.min.css" rel="stylesheet"/>
+
+        <style>
+            body{margin-top:20px;}
+            .card-style1 {
+                box-shadow: 0px 0px 10px 0px rgb(89 75 128 / 9%);
+            }
+            .border-0 {
+                border: 0!important;
+            }
+            .card {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                min-width: 0;
+                word-wrap: break-word;
+                background-color: #fff;
+                background-clip: border-box;
+                border: 1px solid rgba(0,0,0,.125);
+                border-radius: 0.25rem;
+            }
+
+            section {
+                padding: 120px 0;
+                overflow: hidden;
+                background: #fff;
+            }
+            .mb-2-3, .my-2-3 {
+                margin-bottom: 2.3rem;
+            }
+
+            .section-title {
+                font-weight: 600;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                margin-bottom: 10px;
+                position: relative;
+                display: inline-block;
+            }
+            .text-primary {
+                color: #ceaa4d !important;
+            }
+            .text-secondary {
+                color: #15395A !important;
+            }
+            .font-weight-600 {
+                font-weight: 600;
+            }
+            .display-26 {
+                font-size: 1.3rem;
+            }
+
+            @media screen and (min-width: 992px){
+                .p-lg-7 {
+                    padding: 4rem;
+                }
+            }
+            @media screen and (min-width: 768px){
+                .p-md-6 {
+                    padding: 3.5rem;
+                }
+            }
+            @media screen and (min-width: 576px){
+                .p-sm-2-3 {
+                    padding: 2.3rem;
+                }
+            }
+            .p-1-9 {
+                padding: 1.9rem;
+            }
+
+            .bg-secondary {
+                background: #15395A !important;
+            }
+            @media screen and (min-width: 576px){
+                .pe-sm-6, .px-sm-6 {
+                    padding-right: 3.5rem;
+                }
+            }
+            @media screen and (min-width: 576px){
+                .ps-sm-6, .px-sm-6 {
+                    padding-left: 3.5rem;
+                }
+            }
+            .pe-1-9, .px-1-9 {
+                padding-right: 1.9rem;
+            }
+            .ps-1-9, .px-1-9 {
+                padding-left: 1.9rem;
+            }
+            .pb-1-9, .py-1-9 {
+                padding-bottom: 1.9rem;
+            }
+            .pt-1-9, .py-1-9 {
+                padding-top: 1.9rem;
+            }
+            .mb-1-9, .my-1-9 {
+                margin-bottom: 1.9rem;
+            }
+            @media (min-width: 992px){
+                .d-lg-inline-block {
+                    display: inline-block!important;
+                }
+            }
+            .rounded {
+                border-radius: 0.25rem!important;
+            }
+        </style>
+    </h:head>
+    <h:body class="nav-md">
+        <div class="container body">
+            <div class="main_container">
+                <div class="col-md-3 left_col">
+                    <div class="left_col scroll-view">
+                        <div class="navbar nav_title" style="border: 0;">
+                            <a href="index.xhtml" class="site_title"><i class="fa fa-paw"></i> <span>Automotive</span></a>
+                        </div>
+
+                        <div class="clearfix"></div>
+
+
+
+                        <br />
+
+                        <!-- sidebar menu -->
+                        <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                            <div class="menu_section">
+
+                                <ul class="nav side-menu">
+                                    <li><a href="index.xhtml"><i class="fa fa-home"></i> Home </a></li>
+                                    <li><a><i class="fa fa-car"></i> Cars <span class="fa fa-chevron-down"></span></a>
+                                        <ul class="nav child_menu">
+                                            <li><a href="Cars_Lease.xhtml">For Lease</a></li>
+                                            <li><a href="Cars_Sales.xhtml">For Sale</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="viewLeases.xhtml"><i class="fa fa-refresh"></i> Leases </a></li>
+                                    <li><a href="viewSales.xhtml"><i class="fa fa-money"></i> Sales </a></li>
+
+
+
+                                </ul>
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <!-- top navigation -->
+                <div class="top_nav">
+                    <div class="nav_menu">
+                        <div class="nav toggle">
+                            <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+                        </div>
+                        <nav class="nav navbar-nav">
+                            <ul class=" navbar-right">
+                                <li class="nav-item dropdown open" style="padding-left: 15px;">
+                                    <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
+                                        <img src="images/img.jpg" alt=""/>#{customerModel.loadCust.FName} #{customerModel.loadCust.LName}
+                                    </a>
+                                    <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item"  href="MyInfo.xhtml"> Profile</a>
+                                        <a class="dropdown-item"  href="ChangePassword.xhtml"> Change Password</a>
+
+                                        <h:form>
+                                            <h:commandLink class="dropdown-item"  action="#{userModel.logout()}"><i class="fa fa-sign-out pull-right"></i> Log Out</h:commandLink>
+                                        </h:form>
+                                    </div>
+                                </li>
+
+
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <!-- /top navigation -->
+
+                <!-- page content -->
+                <div class="right_col" role="main">
+                    <div class="">
+
+
+                        <div class="clearfix"></div>
+
+                        <div class="row" style="display: block;">
+
+
+
+
+                            <div class="clearfix"></div>
+
+
+
+
+
+
+                            <div class="clearfix"></div>
+
+                            <div class="col-md-12 col-sm-12  ">
+                                <div class="x_panel">
+                                    <div class="x_title">
+                                        <h2>My Info <small></small></h2>
+                                        <ul class="nav navbar-right panel_toolbox">
+
+                                        </ul>
+                                        <div class="clearfix"></div>
+                                    </div>
+
+                                    <div class="x_content">
+
+                                        <div class="table-responsive">
+                                            <section class="bg-light">
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <div class="col-lg-12 mb-4 mb-sm-5">
+                                                            <div class="card card-style1 border-0">
+                                                                <div class="card-body p-1-9 p-sm-2-3 p-md-6 p-lg-7">
+                                                                    <div class="row align-items-center">
+                                                                        <div class="col-lg-6 mb-4 mb-lg-0">
+                                                                            <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="..."/>
+                                                                        </div>
+                                                                        <c:forEach var="items" items="#{customerModel.custList2}">
+                                                                            <div class="col-lg-6 px-xl-10">
+                                                                                <div class="bg-secondary d-lg-inline-block py-1-9 px-1-9 px-sm-6 mb-1-9 rounded">
+                                                                                    <h3 class="h2 text-white mb-0">#{items.FName} #{items.LName}</h3>
+                                                                                    <span class="text-primary">Customer</span>
+                                                                                </div>
+                                                                                <ul class="list-unstyled mb-1-9">
+                                                                                    <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">Phone : </span> #{items.phone}</li>
+                                                                                    <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">Email : </span> #{items.email}</li>
+                                                                                    <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">Gender : </span>#{items.gender}</li>
+                                                                                    <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">Address : </span> #{items.address}</li>
+                                                                                    <h:form>
+                                                                                        <li class="mb-2 mb-xl-3 display-28"><h:commandButton class="btn btn-info" value="Update Info" action="#{customerModel.fetchItems(items)}"></h:commandButton></li>
+
+                                                                                    </h:form>
+
+                                                                                </ul>
+
+                                                                            </div>
+                                                                        </c:forEach>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                            </section>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /page content -->
+
+                <!-- footer content -->
+                <footer>
+                    <div class="pull-right">
+                        &copy; Copyright <strong><span>UWANZIZA Chanelle</span></strong>. All Rights Reserved
+                    </div>
+                    <div class="clearfix"></div>
+                </footer>
+                <!-- /footer content -->
+            </div>
+        </div>
+
+        <!-- jQuery -->
+        <script src="../vendors/jquery/dist/jquery.min.js"></script>
+        <!-- Bootstrap -->
+        <script src="../vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- FastClick -->
+        <script src="../vendors/fastclick/lib/fastclick.js"></script>
+        <!-- NProgress -->
+        <script src="../vendors/nprogress/nprogress.js"></script>
+        <!-- iCheck -->
+        <script src="../vendors/iCheck/icheck.min.js"></script>
+
+        <!-- Custom Theme Scripts -->
+        <script src="../build/js/custom.min.js"></script>
+    </h:body>
+</html>
+

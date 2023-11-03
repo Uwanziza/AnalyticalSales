@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Sign Up</title>
+        <link href="images/favicon.ico" rel="icon"/>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&amps;display=swap" rel="stylesheet"/>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
+        <link rel="stylesheet" href="css/style.css"/>
+        
+        <script type="text/javascript">
+            now = new Date();
+            randomNum = '';
+            //randomNum += Math.round(Math.random() * 9);
+            //randomNum += Math.round(Math.random() * 9);
+            //randomNum += now.getTime();
+            randomNum += Math.floor(100000 + Math.random() * 900000);
+            window.onload = function () {
+                document.getElementById("form1:psd").value = randomNum;
+            }
+        </script>
+
+    </h:head>
+    <h:body>
+        <section class="ftco-section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-6 text-center mb-5">
+                        <h2 class="heading-section">Sign Up</h2>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-12 col-lg-10">
+                        <div class="wrap d-md-flex">
+                            <div class="text-wrap p-4 p-lg-5 text-center d-flex align-items-center order-md-last">
+                                <div class="text w-100">
+                                    <h2>Welcome to <br/>Automotive Sales &amp; Leasing Analytics System</h2>
+                                    <p>Already have an account?</p>
+                                    <a href="login.xhtml" class="btn btn-white btn-outline-white">Sign in</a>
+                                </div>
+                            </div>
+                            <div class="login-wrap p-4 p-lg-5">
+                                <div class="d-flex">
+                                    <div class="w-100">
+                                        <h3 class="mb-4">Sign Up</h3>
+                                    </div>
+
+                                </div>
+                                <h:form class="signin-form" id="form1">
+                                    <p:messages/>
+                                    <div class="form-group mb-3">
+                                        <label class="label" for="fname">First Name</label>
+                                        <h:inputText class="form-control" pt:placeholder="First Name" value="#{adminModel.customer.FName}" required="true" requiredMessage="First Name is Required!"/>
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <label class="label" for="lname">Last Name</label>
+                                        <h:inputText class="form-control" pt:placeholder="Last Name" value="#{adminModel.customer.LName}" required="true" requiredMessage="Last Name is Required!"/>
+                                    </div>
+                                    
+                                     <div class="form-group mb-3">
+                                        <label class="label" for="phone">Phone</label>
+                                        <p:inputMask mask="+250799999999" class="form-control" pt:placeholder="Phone" value="#{adminModel.customer.phone}" required="true" requiredMessage="Phone is Required!"/>
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <label class="label" for="email">Email</label>
+                                        <h:inputText class="form-control" pt:placeholder="Email" value="#{adminModel.u.username}" required="true" requiredMessage="Email is Required!">
+                                        <f:validateRegex
+                                                    pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
+                                        </h:inputText>
+                                    </div>
+                                    <div class="form-group mb-3">
+                                       
+                                        <h:inputHidden id="psd" class="form-control" pt:placeholder="Password" value="#{adminModel.u.password}"/>
+                                    </div>
+                                   
+                                    <div class="form-group">
+                                        <h:commandButton type="submit" class="form-control btn btn-primary submit px-3" value="Sign up" action="#{adminModel.createCustomer()}"/>
+                                    </div>
+                                    <div class="form-group d-md-flex">
+                                        <div class="w-50 text-left">
+                                            <a href="../Landing/index.xhtml" class="">Go to Homepage
+                                            </a>
+                                        </div>
+                                        <div class="w-50 text-md-right">
+                                            <a href="login.xhtml">Create Account</a>
+                                        </div>
+                                    </div>
+                                </h:form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script src="js/jquery.min.js"></script>
+        <script src="js/popper.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/main.js"></script>
+    </h:body>
+</html>
+
